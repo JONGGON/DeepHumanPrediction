@@ -1,0 +1,7 @@
+<caution>
+
+Learn from easy examples one by one!!!!
+
+for example)
+E1_-__Jab_left -> E2_-__Jab_right -> E3_-__cross_left -> E4_-__cross_right
+

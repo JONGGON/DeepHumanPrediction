@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b1e46fe-8f58-4580-8d0b-4c84e47ff435" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="bvh_reader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bvh_reader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="82" />
+              <folding>
+                <element signature="e#22#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customizedRNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customizedRNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18440">
+              <caret line="923" column="35" lean-forward="false" selection-start-line="923" selection-start-column="35" selection-end-line="923" selection-end-column="35" />
+              <folding>
+                <element signature="e#212#251#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bvh_writer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bvh_writer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="32" column="66" lean-forward="false" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+              <folding>
+                <element signature="e#22#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3980">
+              <caret line="209" column="22" lean-forward="false" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
+              <folding>
+                <marker date="1503509494214" expanded="true" signature="7933:18088" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="9527:9732" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="9742:9954" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="10499:10848" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="11755:12027" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="12037:12343" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="12435:12514" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="12524:12601" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="12622:12858" ph="'''...'''" />
+                <marker date="1503509494214" expanded="true" signature="12880:16865" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="13536:13787" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="13993:16547" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="14088:14300" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="14406:14686" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="14721:14932" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="15336:16547" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="16885:18088" ph="..." />
+                <marker date="1503509494214" expanded="true" signature="17153:18039" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ctx</find>
+      <find>data</find>
+      <find>column</find>
+      <find>self.for_training</find>
+      <find>file_name</find>
+      <find>label_motion</find>
+      <find>Normalization_factor</find>
+      <find>num_cells</find>
+      <find>test_size</find>
+      <find>file_directory</find>
+      <find>test_label_motion</find>
+      <find>unroll</find>
+      <find>SequentialRNNCell</find>
+      <find>fused</find>
+      <find>ones</find>
+      <find>rnn</find>
+      <find>fullyconneted</find>
+      <find>_normalize_sequence</find>
+      <find>fuse</find>
+      <find>print(np.shape(train_label_motion))</find>
+      <find>rnncell</find>
+      <find>train_label_motion</find>
+      <find>warnings</find>
+      <find>LSTM</find>
+      <find>lstm</find>
+      <find>gru</find>
+      <find>self._init_counter</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="C:/ProgramData/Anaconda2/Lib/site-packages/mxnet/io.py" />
+        <option value="$PROJECT_DIR$/../Motion_Prediction_Simple/network.py" />
+        <option value="$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/Data_Preprocessing/bvh_to_cartesian.py" />
+        <option value="$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/main.py" />
+        <option value="$USER_HOME$/DeepHumanMotionGenerator/Data_Preprocessing/main.py" />
+        <option value="$PROJECT_DIR$/rnn_cell_for_motion.py" />
+        <option value="C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/rnn_cell.py" />
+        <option value="$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_sequencialversion/customizedRNN.py" />
+        <option value="$PROJECT_DIR$/../../Motion_Prediction_advanced_Seq2Seq_sequencialversion/network.py" />
+        <option value="$PROJECT_DIR$/../../Motion_Prediction_Seq2Seq_sequencialversion/network.py" />
+        <option value="$PROJECT_DIR$/bvh_writer.py" />
+        <option value="$PROJECT_DIR$/bvh_reader.py" />
+        <option value="$PROJECT_DIR$/customizedRNN.py" />
+        <option value="$PROJECT_DIR$/network.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2625" />
+    <option name="y" value="24" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="ToolWindowPython Console.ShowToolbar" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration default="false" name="bvh_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bvh_reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="network" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="bvh_writer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bvh_writer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Motion_Prediction_Seq2Seq" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.bvh_reader" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      <item index="2" class="java.lang.String" itemvalue="Python.network" />
+      <item index="3" class="java.lang.String" itemvalue="Python.bvh_writer" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.network" />
+        <item index="2" class="java.lang.String" itemvalue="Python.bvh_reader" />
+        <item index="3" class="java.lang.String" itemvalue="Python.bvh_writer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b1e46fe-8f58-4580-8d0b-4c84e47ff435" name="Default" comment="" />
+      <created>1499760348950</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1499760348950</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2625" y="24" width="1855" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08306836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6699847" sideWeight="0.5046875" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41465968" sideWeight="0.4953125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40081385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://C:/ProgramData/Anaconda2/Lib/site-packages/mxnet/io.py</url>
+          <line>1</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/symbol.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/rnn_cell.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Simple/network.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Simple/bvh_reader.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/numpy/__init__.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/numpy/core/numeric.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/glob.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/executor.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/Data_Preprocessing/skeleton.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/Data_Preprocessing/cgkit_bvh.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/ndarray.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/io.py" />
+    <entry file="file://$USER_HOME$/BVH_Writer/bvh_writer_Seq2Seq_Joint angle_to_Cartesian_coordinates.py" />
+    <entry file="file://$USER_HOME$/BVH_Writer/bvh_writer_Seq2Seq.py" />
+    <entry file="file://$USER_HOME$/DeepHumanMotionGenerator/Data_Preprocessing/bvh_reader.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/Data_Preprocessing/bvh_to_cartesian.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/network.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/cartesian_reader.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_Joint angle_to_Cartesian_coordinates/main.py" />
+    <entry file="file://$USER_HOME$/DeepHumanMotionGenerator/Data_Preprocessing/main.py" />
+    <entry file="file://$USER_HOME$/DeepHumanMotionGenerator/Data_Preprocessing/network.py" />
+    <entry file="file://$USER_HOME$/DeepHumanMotionGenerator/Data_Preprocessing/data_reader.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/module/base_module.py" />
+    <entry file="file://$PROJECT_DIR$/rnn_cell_for_motion.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Anaconda3/Lib/os.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/_symbol_internal.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/numpy/ma/core.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1282051629/builtins.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/initializer.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/base.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/visualization.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/warnings.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/hierarchy.bvh" />
+    <entry file="file://$PROJECT_DIR$/Data/ACCAD/Transform_Male1_bvh/Short_data/train/Male1_C17_RunTurnAround.bvh" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/module/module.py" />
+    <entry file="file://$PROJECT_DIR$/../Motion_Prediction_Seq2Seq_sequencialversion/customizedRNN.py" />
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/rnn_cell.py" />
+    <entry file="file://$PROJECT_DIR$/test_Prediction_motion/hierarchy_Male1_C05_WalkToRun.bvh" />
+    <entry file="file://$PROJECT_DIR$/Data/ACCAD/Transform_Male1_bvh/Short_data/test/Male2_G2_FrontKick.bvh" />
+    <entry file="file://$PROJECT_DIR$/test_Prediction_motion/hierarchy_Male2_G2_FrontKick.bvh" />
+    <entry file="file://$PROJECT_DIR$/Data/ACCAD/Transform_Male1_bvh/Short_data/train/Male2_G20_ReverseSpinCrescentRight.bvh" />
+    <entry file="file://$PROJECT_DIR$/test_Prediction_motion/hierarchy_Male2_G20_ReverseSpinCrescentRight.bvh" />
+    <entry file="file://$PROJECT_DIR$/test_Prediction_motion/hierarchy_Male1_C02_RunToStand.bvh" />
+    <entry file="file://$PROJECT_DIR$/../../Motion_Prediction_Seq2Seq_sequencialversion/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Motion_Prediction_advanced_Seq2Seq_sequencialversion/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="325" column="28" lean-forward="true" selection-start-line="325" selection-start-column="28" selection-end-line="325" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/symbol.py" />
+    <entry file="file://$PROJECT_DIR$/bvh_writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="32" column="66" lean-forward="false" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+          <folding>
+            <element signature="e#22#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customizedRNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18440">
+          <caret line="923" column="35" lean-forward="false" selection-start-line="923" selection-start-column="35" selection-end-line="923" selection-end-column="35" />
+          <folding>
+            <element signature="e#212#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bvh_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="82" />
+          <folding>
+            <element signature="e#22#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3980">
+          <caret line="209" column="22" lean-forward="false" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
+          <folding>
+            <marker date="1503509494214" expanded="true" signature="7933:18088" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="9527:9732" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="9742:9954" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="10499:10848" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="11755:12027" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="12037:12343" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="12435:12514" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="12524:12601" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="12622:12858" ph="'''...'''" />
+            <marker date="1503509494214" expanded="true" signature="12880:16865" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="13536:13787" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="13993:16547" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="14088:14300" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="14406:14686" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="14721:14932" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="15336:16547" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="16885:18088" ph="..." />
+            <marker date="1503509494214" expanded="true" signature="17153:18039" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

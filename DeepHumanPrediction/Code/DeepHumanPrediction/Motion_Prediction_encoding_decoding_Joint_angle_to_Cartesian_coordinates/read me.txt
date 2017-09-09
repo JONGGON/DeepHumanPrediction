@@ -1,0 +1,12 @@
+<caution>
+
+Learn from easy examples one by one!!!!
+
+Currently, this code is not executed because the learning data has changed since 2017-08-01 00:30
+More data preprocessing is required in the Cartesian Coordinates code.
+
+
+now, 
+for example)
+E1_-__Jab_left -> E2_-__Jab_right -> E3_-__cross_left -> E4_-__cross_right
+

@@ -1,0 +1,13 @@
+Why create an original C3D file with bvh using Motionbuilder?
+
+Bvh has the corresponding motion data in the hierarchy structure.
+
+The bvh file I downloaded from the web had its own hierarchy structure. This is hard to use.
+
+so!!! I made the data according to my hierarchy structure for the unification of the hirerarchy structure.
+
+I also studied a lot about Motion Builder.
+
+One more thing to watch out for (the most important thing in some ways)
+C3D files also have different number of markers. So through MotionBuilder We need to create an object by unifying the number of markers, 
+and add the skeleton to the object and extract it as BVH.

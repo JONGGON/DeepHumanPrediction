@@ -1,0 +1,191 @@
+{
+  "nodes": [
+    {
+      "op": "null", 
+      "name": "data", 
+      "inputs": []
+    }, 
+    {
+      "op": "transpose", 
+      "name": "transpose0", 
+      "attr": {"axes": "(1, 0, 2)"}, 
+      "inputs": [[0, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm1_parameters", 
+      "attr": {"__init__": "[\"fusedrnn\", {\"forget_bias\": 1.0, \"bidirectional\": false, \"mode\": \"lstm\", \"num_hidden\": 500, \"init\": null, \"num_layers\": 1}]"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm1_begin_state_0", 
+      "attr": {
+        "__layout__": "LNC", 
+        "dtype": "float32", 
+        "shape": "(1, 0, 500)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm1_begin_state_1", 
+      "attr": {
+        "__layout__": "LNC", 
+        "dtype": "float32", 
+        "shape": "(1, 0, 500)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "RNN", 
+      "name": "lstm1_rnn", 
+      "attr": {
+        "bidirectional": "False", 
+        "mode": "lstm", 
+        "num_layers": "1", 
+        "p": "0.0", 
+        "state_outputs": "True", 
+        "state_size": "500"
+      }, 
+      "inputs": [[1, 0, 0], [2, 0, 0], [3, 0, 0], [4, 0, 0]]
+    }, 
+    {
+      "op": "Dropout", 
+      "name": "dropout0", 
+      "attr": {"p": "0.3"}, 
+      "inputs": [[5, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm2_parameters", 
+      "attr": {"__init__": "[\"fusedrnn\", {\"forget_bias\": 1.0, \"bidirectional\": false, \"mode\": \"lstm\", \"num_hidden\": 500, \"init\": null, \"num_layers\": 1}]"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm2_begin_state_0", 
+      "attr": {
+        "__layout__": "LNC", 
+        "dtype": "float32", 
+        "shape": "(1, 0, 500)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm2_begin_state_1", 
+      "attr": {
+        "__layout__": "LNC", 
+        "dtype": "float32", 
+        "shape": "(1, 0, 500)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "RNN", 
+      "name": "lstm2_rnn", 
+      "attr": {
+        "bidirectional": "False", 
+        "mode": "lstm", 
+        "num_layers": "1", 
+        "p": "0.0", 
+        "state_outputs": "True", 
+        "state_size": "500"
+      }, 
+      "inputs": [[6, 0, 0], [7, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "Reshape", 
+      "name": "reshape0", 
+      "attr": {"shape": "(-1, 500)"}, 
+      "inputs": [[10, 2, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "affine1_weight", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "affine1_bias", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "affine1", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": [[11, 0, 0], [12, 0, 0], [13, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "sigmoid1", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[14, 0, 0]]
+    }, 
+    {
+      "op": "Dropout", 
+      "name": "dropout1", 
+      "attr": {"p": "0.3"}, 
+      "inputs": [[15, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "affine2_weight", 
+      "attr": {"num_hidden": "40"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "affine2_bias", 
+      "attr": {"num_hidden": "40"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "affine2", 
+      "attr": {"num_hidden": "40"}, 
+      "inputs": [[16, 0, 0], [17, 0, 0], [18, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "label", 
+      "inputs": []
+    }, 
+    {
+      "op": "SoftmaxOutput", 
+      "name": "softmax", 
+      "inputs": [[19, 0, 0], [20, 0, 0]]
+    }
+  ], 
+  "arg_nodes": [0, 2, 7, 12, 13, 17, 18, 20], 
+  "node_row_ptr": [
+    0, 
+    1, 
+    2, 
+    3, 
+    4, 
+    5, 
+    8, 
+    10, 
+    11, 
+    12, 
+    13, 
+    16, 
+    17, 
+    18, 
+    19, 
+    20, 
+    21, 
+    23, 
+    24, 
+    25, 
+    26, 
+    27, 
+    28
+  ], 
+  "heads": [[21, 0, 0]], 
+  "attrs": {"mxnet_version": ["int", 905]}
+}
