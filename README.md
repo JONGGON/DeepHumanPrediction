@@ -28,7 +28,7 @@
 
     * [**Code**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/BVH_Writer)
 
-* ### [**Human Motion Prediction**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction) 
+* ### [**Human Motion Prediction basic**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction) 
     * **Encoding + Decoding Structure**
 
         * [**Motion Prediction Simple - completed**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction/Motion_Prediction_Simple)
@@ -56,24 +56,25 @@
     
         * [**Motion Prediction advanced Seq2Seq batch learning version - completed**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction/Motion_Prediction_advanced_Seq2Seq_batchversion)
 
-        * [**Motion Prediction Seq2Seq(not using decoder input) - completed**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction/Motion_Prediction_Seq2Seq_No_Input_decoder)
+        * [**Motion Prediction Seq2Seq - Not Using Decoder Input - completed**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction/Motion_Prediction_Seq2Seq_No_Input_decoder)
 
 >## ***Master's Thesis***
 
-* ### [**Short : `1 second` and Long : `2 second` Deep Human Motion Prediction**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanInteraction)
+* ### [**Short : `1 second` and Long : `2 second` Deep Human Motion Prediction**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
+    * [***Human Motion Prediction with Seq2Seq , Input noise , Tied weights ,  Batch learning***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
+        ```
+        Developed Structure
+        ```
     * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
     
         ```
         Let's change the structure more efficiently.
         ```
-
     * [**Various human behavior prediction artificial neural networks - not yet**]()
         ```
         A network that can classify and predict numerous behaviors.
         ```
-
-
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
 * `python verison : 3.6.1 , anaconda3 version : (4.4.0)` 

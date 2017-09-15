@@ -509,7 +509,7 @@ class LSTMCell(BaseRNNCell):
         output = symbol.FullyConnected(data=next_h, num_hidden=self._num_output*20)  # customized by JG
         
         # Transform output size and output value to the motion network. -value : Linear , shape =(motion_shape)
-        output = symbol.FullyConnected(data=next_h, weight=self._oW, bias=self._oB,
+        output = symbol.FullyConnected(data=output, weight=self._oW, bias=self._oB,
                                        num_hidden=self._num_output)  # customized by JG
 
         return output, [next_h, next_c]

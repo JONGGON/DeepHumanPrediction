@@ -3,7 +3,7 @@ The section annotated 'customized by JG' is the transform and addition of the or
 
 from mxnet import symbol, init, ndarray
 from mxnet.base import string_types, numeric_types
-
+import mxnet as mx
 
 def _cells_state_shape(cells):
     return sum([c.state_shape for c in cells], [])
@@ -439,7 +439,6 @@ class RNNCell(BaseRNNCell):
 
         return output, [state]
 
-
 class LSTMCell(BaseRNNCell):
     """Long-Short Term Memory (LSTM) network cell.
 
@@ -482,6 +481,9 @@ class LSTMCell(BaseRNNCell):
         return ['_i', '_f', '_c', '_o']
 
     def __call__(self, inputs, states):
+
+        '''1. parameter sharing!!!! - for generalization '''
+
         self._counter += 1
         name = '%st%d_' % (self._prefix, self._counter)
         i2h = symbol.FullyConnected(data=inputs, weight=self._iW, bias=self._iB,
@@ -506,12 +508,11 @@ class LSTMCell(BaseRNNCell):
 
         next_h = symbol._internal._mul(out_gate, symbol.Activation(next_c, act_type="tanh") , name='%sout'%name)
 
-        output = symbol.FullyConnected(data=next_h, num_hidden=self._num_output*20)  # customized by JG
-
+        '''2. not parameter sharing , Create Each !!! '''
+        output = symbol.FullyConnected(data=next_h ,  num_hidden = self._num_output*2)  # customized by JG
         # Transform output size and output value to the motion network. -value : Linear , shape =(motion_shape)
-        output = symbol.FullyConnected(data=output, weight=self._oW, bias=self._oB,
-                                       num_hidden=self._num_output)  # customized by JG
 
+        output = symbol.FullyConnected(data= output , bias=self._oB, num_hidden=self._num_output)  # customized by JG
         return output, [next_h, next_c]
 
 

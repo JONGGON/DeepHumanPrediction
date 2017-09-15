@@ -212,7 +212,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
         d_output, _ = d_cell.MultiLayer_feed_previous_unroll(length=pre_timestep, begin_state=e_state, inputs=pre_motion, merge_outputs=True, layout='NTC') # MultiLayer_feed_previous_unroll is also possible.
 
 
-    output = mx.sym.LinearRegressionOutput(data = d_output , label=label_motion)
+    output = mx.sym.LinearRegressionOutput(data = d_output , label=label_motion , grad_scale = 1)
 
     digraph=mx.viz.plot_network(symbol=output,hide_weights=True)
 
@@ -261,9 +261,11 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
         weights_path = 'weights/MotionNet-{}.params'.format(save_period)
 
         if os.path.exists(weights_path):
+            print("load weights")
             mod.load_params(weights_path)
         else:
-            mod.init_params(initializer=mx.initializer.Xavier(rnd_type='gaussian', factor_type='avg', magnitude=1))
+            print("init weights")
+            mod.init_params(initializer=mx.initializer.Normal(sigma=0.01)) # very important
 
         start_time=time.time()
         print("-------------------Learning Start--------------------")
