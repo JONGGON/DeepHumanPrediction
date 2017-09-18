@@ -23,7 +23,7 @@
         * `Since the skeleton information of 'ACCAD' and MOCAPDATA.COM data is different, each preprocessing is necessary.(ACCAD dataset -> Used in Progress , MOCAPDATA.COM dataset -> used in Master's Thesis)`
 
         * `Convert from C3D to BVH using MotionBuilder - It can be difficult because it uses a professional program called 'Motion Builder'.`
-
+        
 * ### **Writing BVH file?**
 
     * [**Code**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/BVH_Writer)
@@ -63,8 +63,13 @@
 * ### [**Short : `1 second` and Long : `2 second` Deep Human Motion Prediction**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
     * [***Human Motion Prediction with Seq2Seq , Input noise , Tied weights ,  Batch learning***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
-        ```
-        Developed Structure
+        ```python
+        '''Please read the notes below'''
+
+        * If we share encoder and decoder weights, we can only use Residual Connection for 'One RNN Layer',
+        because 'ResidualCell' must have the same size of input and output.
+
+        * The code for MultiLayer is not actually used, but is written for later use.
         ```
     * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
     

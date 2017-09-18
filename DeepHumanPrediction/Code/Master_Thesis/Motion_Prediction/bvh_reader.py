@@ -11,7 +11,7 @@ def Motion_Data_Preprocessing(time_step=100, seed_timestep=20, batch_Frame=5 ,TE
     if TEST==False:
         files = glob.glob("Data/ACCAD/Transform_Male1_bvh/Short_data/train/*.bvh")
     else:
-        files = glob.glob("Data/ACCAD/Transform_Male1_bvh/Short_data/train/*.bvh")
+        files = glob.glob("Data/ACCAD/Transform_Male1_bvh/Short_data/test/*.bvh")
 
     time_step = time_step
     seed_timestep = seed_timestep

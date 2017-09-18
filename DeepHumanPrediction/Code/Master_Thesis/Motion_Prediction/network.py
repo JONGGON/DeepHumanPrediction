@@ -2,7 +2,8 @@ import mxnet as mx
 import numpy as np
 import bvh_reader as br
 import bvh_writer as bw
-import customizedRNN as RNN # JG CustomizedRNN.py
+import decoderRNN as dRNN # JG Customized decoderRNN.py
+import encoderRNN as eRNN # JG Customized encoderRNN.py
 import os
 import time
 from collections import OrderedDict
@@ -90,158 +91,295 @@ class LinearRegressionProp(mx.operator.CustomOpProp):
 
 print("<<<Motion with advanced Seq2Seq>>>")
 '''Encoder'''
-def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.0 , cell='gru'):
+def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.0 , cell='gru' , parameter_shared=False):
 
     print("<<<encoder structure>>>")
     cell_type = cell
-    Muilti_cell = mx.rnn.SequentialRNNCell()
+    param=[]
+    Muilti_cell = eRNN.SequentialRNNCell()
 
     for i in range(layer_number):
 
-        if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
+        #sharing parameters
+        if parameter_shared==True:
 
-            if Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=mx.rnn.ZoneoutCell(mx.rnn.GRUCell(num_hidden=hidden_number , prefix="gru_encoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
-                Muilti_cell.add(Zoneout_cell)
+            if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
+
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    eGRUCell =eRNN.GRUCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eGRUCell.parameter)
+                    Zoneout_cell=eRNN.ZoneoutCell(eGRUCell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    eGRUCell =eRNN.GRUCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eGRUCell.parameter)
+                    Muilti_cell.add(eGRUCell)
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm' :
+
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    eLSTMCell=eRNN.LSTMCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eLSTMCell.parameter)
+                    Zoneout_cell=eRNN.ZoneoutCell(eLSTMCell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    eLSTMCell=eRNN.LSTMCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eLSTMCell.parameter)
+                    Muilti_cell.add(eLSTMCell)
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
 
             else:
-                Muilti_cell.add(mx.rnn.GRUCell(num_hidden=hidden_number , prefix="gru_encoder_{}".format(i)))
 
-            print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    eRNNCell=eRNN.RNNCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eRNNCell.parameter)
+                    Zoneout_cell=eRNN.ZoneoutCell(eRNNCell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-        elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm' :
+                else:
+                    eRNNCell=eRNN.RNNCell(num_hidden=hidden_number, prefix="{}_{}_shared".format(cell_type, i))
+                    param.append(eRNNCell.parameter)
+                    Muilti_cell.add(eRNNCell)
+
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
+
+            if Dropout_rate > 0 and (layer_number - 1) > i:
+
+                Muilti_cell.add(eRNN.DropoutCell(Dropout_rate, prefix="dropout_encoder_{}".format(i)))
+                print("stack {}-'{}'- encoder dropout cell".format(i,cell_type))
+
+        else : #parameter_shared==False:
+            if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
+
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=eRNN.ZoneoutCell(eRNN.GRUCell(num_hidden=hidden_number , prefix="{}_encoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(eRNN.GRUCell(num_hidden=hidden_number , prefix="{}_encoder_{}".format(cell_type,i)))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm' :
 
 
-            if Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=mx.rnn.ZoneoutCell(mx.rnn.LSTMCell(num_hidden=hidden_number, prefix="lstm_encoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
-                Muilti_cell.add(Zoneout_cell)
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=eRNN.ZoneoutCell(eRNN.LSTMCell(num_hidden=hidden_number, prefix="{}_encoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(eRNN.LSTMCell(num_hidden=hidden_number,prefix="{}_encoder_{}".format(cell_type,i)))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
 
             else:
-                Muilti_cell.add(mx.rnn.LSTMCell(num_hidden=hidden_number,prefix="lstm_encoder_{}".format(i)))
 
-            print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                if Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=eRNN.ZoneoutCell(eRNN.RNNCell(num_hidden=hidden_number, prefix="{}_encoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-        else:
+                else:
+                    Muilti_cell.add(eRNN.RNNCell(num_hidden=hidden_number, prefix="{}_encoder_{}".format(cell_type,i)))
 
-            if Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=mx.rnn.ZoneoutCell(mx.rnn.RNNCell(num_hidden=hidden_number, prefix="rnn_encoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
-                Muilti_cell.add(Zoneout_cell)
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
 
-            else:
-                Muilti_cell.add(mx.rnn.RNNCell(num_hidden=hidden_number, prefix="rnn_encoder_{}".format(i)))
+            if Dropout_rate > 0 and (layer_number - 1) > i:
 
-            print("stack {}-'{}'- encoder cell".format(i,cell_type))
+                Muilti_cell.add(eRNN.DropoutCell(Dropout_rate, prefix="dropout_encoder_{}".format(i)))
+                print("stack {}-'{}'- encoder dropout cell".format(i,cell_type))
 
-        if Dropout_rate > 0 and (layer_number - 1) > i:
-
-            Muilti_cell.add(mx.rnn.DropoutCell(Dropout_rate, prefix="dropout_encoder_{}".format(i)))
-            print("stack {}-'{}'- encoder dropout cell".format(i,cell_type))
 
     print("\n")
-    return Muilti_cell
+    return Muilti_cell,param
 
 '''Decoder'''
-def decoder(layer_number=1 , hidden_number=500 , output_number = 100 , Dropout_rate=0.2 , Zoneout_rate=0.0 , Residual=True ,  cell='gru'):
+def decoder(layer_number=1 , hidden_number=500 , output_number = 100 , Dropout_rate=0.2 , Zoneout_rate=0.0 , Residual=True , cell='gru', param=list()):
 
     print("<<<decoder structure>>>")
 
     cell_type = cell
-    Muilti_cell = RNN.SequentialRNNCell()
+    Muilti_cell = dRNN.SequentialRNNCell()
 
     for i in range(layer_number):
+        #sharing parameters
+        if param!=list():
 
-        if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
+            if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
 
-            if Residual == True and Zoneout_rate > 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.GRUCell(num_hidden=hidden_number, num_output= output_number ,prefix="gru_decoder_{}".format(i)))
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)  
-                Muilti_cell.add(Zoneout_cell)
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number,num_hidden=hidden_number, num_output= output_number ,prefix="{}_{}_shared".format(cell_type,i) ,shared_param=param[i]))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-            elif Residual == True and Zoneout_rate == 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.GRUCell(num_hidden=hidden_number, num_output= output_number ,prefix="gru_decoder_{}".format(i)))
-                Muilti_cell.add(Residual_cell)
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number,num_hidden=hidden_number, num_output= output_number ,prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+                    Muilti_cell.add(Residual_cell)
 
-            elif Residual == False and Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(RNN.GRUCell(num_hidden=hidden_number, num_output= output_number ,prefix="gru_decoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)  
-                Muilti_cell.add(Zoneout_cell)
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output= output_number ,prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]) , zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-            else:
-                Muilti_cell.add(RNN.GRUCell(num_hidden=hidden_number, num_output= output_number ,prefix="gru_decoder_{}".format(i)))
+                else:
+                    Muilti_cell.add(dRNN.GRUCell(current_layer=i , layer_number=layer_number,num_hidden=hidden_number, num_output= output_number ,prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
 
-            print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
 
-        elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm':
+            elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm':
 
-            if Residual == True and Zoneout_rate > 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.LSTMCell(num_hidden=hidden_number, num_output=output_number, prefix="lstm_decoder_{}".format(i)))
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)  
-                Muilti_cell.add(Zoneout_cell)
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number,num_hidden=hidden_number, num_output=output_number, prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-            elif Residual == True and Zoneout_rate == 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.LSTMCell(num_hidden=hidden_number, num_output=output_number, prefix="lstm_decoder_{}".format(i)))
-                Muilti_cell.add(Residual_cell)
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.LSTMCell(num_hidden=hidden_number, num_output=output_number, current_layer=i , layer_number=layer_number, prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+                    Muilti_cell.add(Residual_cell)
 
-            elif Residual == False and Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(RNN.LSTMCell(num_hidden=hidden_number, num_output=output_number, prefix="lstm_decoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)  
-                Muilti_cell.add(Zoneout_cell)
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number,num_hidden=hidden_number, num_output=output_number, prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
 
-            else:
-                Muilti_cell.add(RNN.LSTMCell(num_hidden=hidden_number, num_output=output_number, prefix="lstm_decoder_{}".format(i)))
+                else:
+                    Muilti_cell.add(dRNN.LSTMCell(current_layer=i , layer_number=layer_number , num_hidden=hidden_number , num_output=output_number , prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
 
-            print("stack {}-'{}'- decoder cell".format(i,cell_type))
-
-        else:
-
-            if Residual == True and Zoneout_rate > 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.RNNCell(num_hidden=hidden_number, num_output=output_number , prefix="rnn_decoder_{}".format(i)))
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)  
-                Muilti_cell.add(Zoneout_cell)
-
-            elif Residual == True and Zoneout_rate == 0:
-                print("residualcell applied_{}".format(i))
-                Residual_cell=RNN.ResidualCell(RNN.RNNCell(num_hidden=hidden_number, num_output=output_number,  prefix="rnn_decoder_{}".format(i)))
-                Muilti_cell.add(Residual_cell)
-
-            elif Residual == False and Zoneout_rate > 0:
-                print("zoneoutcell applied-{}".format(i))
-                Zoneout_cell=RNN.ZoneoutCell(RNN.RNNCell(num_hidden=hidden_number, num_output=output_number , prefix="rnn_decoder_{}".format(i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
-                Muilti_cell.add(Zoneout_cell)
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
 
             else:
-                Muilti_cell.add(RNN.RNNCell(num_hidden=hidden_number , num_output=output_number, prefix="rnn_decoder_{}".format(i)))
 
-            print("stack {}-'{}'- decoder cell".format(i,cell_type))
-            
-        if Dropout_rate > 0 and (layer_number-1) > i:
-            Muilti_cell.add(RNN.DropoutCell(Dropout_rate, prefix="dropout_decoder_{}".format(i)))
-            print("stack {}-'{}'- decoder dropout cell".format(i,cell_type))
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.RNNCell(current_layer=i , layer_number=layer_number , num_hidden=hidden_number, num_output=output_number ,prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.RNNCell(current_layer=i , layer_number=layer_number , num_hidden=hidden_number, num_output=output_number, prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+                    Muilti_cell.add(Residual_cell)
+
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.RNNCell(current_layer=i , layer_number=layer_number , num_hidden=hidden_number, num_output=output_number , prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(dRNN.RNNCell(current_layer=i , layer_number=layer_number , num_hidden=hidden_number , num_output=output_number, prefix="{}_{}_shared".format(cell_type,i),shared_param=param[i]))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            if Dropout_rate > 0 and (layer_number-1) > i:
+                Muilti_cell.add(dRNN.DropoutCell(Dropout_rate, prefix="dropout_decoder_{}".format(i)))
+                print("stack {}-'{}'- decoder dropout cell".format(i,cell_type))
+
+        else: #param = list() or []:
+            if cell_type == 'gru' or cell_type == 'GRU' or cell_type == 'Gru' :
+
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output= output_number ,prefix="{}_decoder_{}".format(cell_type,i)))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output= output_number ,prefix="{}_decoder_{}".format(cell_type,i)))
+                    Muilti_cell.add(Residual_cell)
+
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.GRUCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output= output_number ,prefix="{}_decoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(dRNN.GRUCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output= output_number ,prefix="{}_decoder_{}".format(cell_type,i)))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm':
+
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number, prefix="{}_decoder_{}".format(cell_type,i)))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number, prefix="{}_decoder_{}".format(cell_type,i)))
+                    Muilti_cell.add(Residual_cell)
+
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number, prefix="{}_decoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(dRNN.LSTMCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number,prefix="{}_decoder_{}".format(cell_type,i)))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            else:
+
+                if Residual == True and Zoneout_rate > 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.RNNCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number , prefix="{}_decoder_{}".format(cell_type,i)))
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(Residual_cell,zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                elif Residual == True and Zoneout_rate == 0:
+                    print("residualcell applied_{}".format(i))
+                    Residual_cell=dRNN.ResidualCell(dRNN.RNNCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number, num_output=output_number,  prefix="{}_decoder_{}".format(cell_type,i)))
+                    Muilti_cell.add(Residual_cell)
+
+                elif Residual == False and Zoneout_rate > 0:
+                    print("zoneoutcell applied-{}".format(i))
+                    Zoneout_cell=dRNN.ZoneoutCell(dRNN.RNNCell(num_hidden=hidden_number, num_output=output_number , prefix="{}_decoder_{}".format(cell_type,i)),zoneout_outputs=Zoneout_rate , zoneout_states=Zoneout_rate)
+                    Muilti_cell.add(Zoneout_cell)
+
+                else:
+                    Muilti_cell.add(dRNN.RNNCell(current_layer=i ,layer_number=layer_number , num_hidden=hidden_number , num_output=output_number, prefix="{}_decoder_{}".format(cell_type,i)))
+
+                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+
+            if Dropout_rate > 0 and (layer_number-1) > i:
+                Muilti_cell.add(dRNN.DropoutCell(Dropout_rate, prefix="dropout_decoder_{}".format(i)))
+                print("stack {}-'{}'- decoder dropout cell".format(i,cell_type))
 
     print("\n")
     return Muilti_cell
 
 def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None ,
     optimizer=None, learning_rate=None , lr_step=None , lr_factor=None , stop_factor_lr=None , use_gpu=True ,
-    TEST=None , num_layer=None , cell=None, hidden_unit=None ,time_step = None , seed_timestep = None , batch_Frame= None , frame_time=None, graphviz=None):
+    TEST=None , num_layer=None , cell=None, hidden_unit=None ,time_step = None , seed_timestep = None , batch_Frame= None , frame_time=None, graphviz=None , parameter_shared=True):
 
     print("-------------------Motion Net-------------------")
 
     '''1. Data_Loading - bvh_reader'''
     Normalization_factor, train_motion, train_label_motion , seed_timestep, pre_timestep, column, file_directory = br.Motion_Data_Preprocessing(time_step , seed_timestep , batch_Frame , TEST)
 
-    print(seed_timestep)
     if TEST==True:
         print("<TEST>")
         data = OrderedDict()
@@ -276,16 +414,25 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
         pre_motion = mx.sym.reshape(mx.sym.slice_axis(data=all_motion, axis=1, begin=seed_timestep, end=seed_timestep + 1),
                                 shape=(batch_size, -1))  # (batch,column) - first frame
 
-
     print("-------------------Network Shape--------------------")
-    e_cell = encoder(layer_number= num_layer , hidden_number=hidden_unit , Dropout_rate=0.0 , Zoneout_rate=0.0 , cell=cell)
-    d_cell = decoder(layer_number= num_layer , hidden_number=hidden_unit , output_number=column , Dropout_rate=0.0 , Zoneout_rate=0.0 , Residual = True , cell=cell)
+    '''
+    only if encoder's parameter_shared=True , parameter Encoder and decoder parameters are shared.
+    '''
+    e_cell , encoder_parameter = encoder(layer_number= num_layer , hidden_number=hidden_unit , Dropout_rate=0.0 , Zoneout_rate=0.0 , cell=cell , parameter_shared = parameter_shared ) # if parameter_shared = True, paramter = encoder's weights , else False = []
+
+    if num_layer==1 and parameter_shared==True: #only if num_layer=1 , Both Residual = True and Residual = False are possible.
+        d_cell = decoder(layer_number= num_layer , hidden_number=hidden_unit , output_number=column , Dropout_rate=0.0 , Zoneout_rate=0.0 , Residual = True , cell=cell , param=encoder_parameter)
+
+    elif num_layer>1 and parameter_shared==True:# There is no way to share parameters with the encoder.
+        d_cell = decoder(layer_number=num_layer, hidden_number=hidden_unit, output_number=column, Dropout_rate=0.0,Zoneout_rate=0.0, Residual=False, cell=cell, param=encoder_parameter)
+
+    else: # parameter_shared=False , Both Residual = True and Residual = False are possible.
+        d_cell = decoder(layer_number=num_layer, hidden_number=hidden_unit, output_number=column, Dropout_rate=0.0,Zoneout_rate=0.0, Residual=True, cell=cell, param=encoder_parameter)
     print("\n")
 
     _ , e_state = e_cell.unroll(length=seed_timestep , inputs=seed_motion , merge_outputs=True , layout='NTC')
 
     # customized by JG
-
     if num_layer==1:
         d_output, _ = d_cell.SingleLayer_feed_previous_unroll(length=pre_timestep, begin_state=e_state,inputs=pre_motion, merge_outputs=True, layout='NTC') # MultiLayer_feed_previous_unroll is also possible.
     else:
@@ -365,10 +512,9 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             for batch in train_iter:
 
                 if epoch % 2 == 0: # Only noise is added when it is an even number
-
                     '''1. Add noise to input - Data Augmentation'''
                     #random_normal
-                    noise = mx.nd.random_normal(loc=0 , scale=2 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
+                    noise = mx.nd.random_normal(loc=0 , scale=3 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
                     #random_uniform
                     #noise = mx.nd.random_uniform(low=-1 , high=1 , shape=(batch_size , seed_timestep+pre_timestep , column) ,ctx=ctx) # random_uniform
                     mod.forward(data_batch=mx.io.DataBatch(data = list([mx.nd.add(batch.data[0].as_in_context(ctx), noise)]), label= list(batch.label)), is_train=True)
@@ -381,7 +527,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 mod.update()
 
             #print('epoch : {} , MSE : {}'.format(epoch,metric.get()))
-            if epoch % 1000 == 0:
+            if epoch % 100 == 0:
                 end_time=time.time()
                 print("-------------------------------------------------------")
                 print("{}_learning time : {}".format(epoch,end_time-start_time))
@@ -482,18 +628,18 @@ if __name__ == "__main__":
     batch_Frame= 1  
     frame_time=30
     save_period=0
-
+    parameter_shared = True
     '''Execution'''
     if TEST : 
 
-        completed=MotionNet(TEST=TEST , save_period=1 , num_layer=num_layer , cell=cell, hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame= batch_Frame , frame_time=frame_time ,graphviz=True)
+        completed=MotionNet(TEST=TEST , save_period=1 , num_layer=num_layer , cell=cell, hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame= batch_Frame , frame_time=frame_time ,graphviz=True, parameter_shared=parameter_shared)
         print(completed)
 
     else:
 
         completed = MotionNet(epoch=300000 , batch_size=5 , save_period=save_period, cost_limit=0.1 ,
         optimizer='adam', learning_rate=0.001 , lr_step=5000, lr_factor=0.99, stop_factor_lr=1e-08 , use_gpu=True ,
-        TEST=TEST , num_layer=num_layer , cell=cell , hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame = batch_Frame , frame_time=frame_time , graphviz=True)
+        TEST=TEST , num_layer=num_layer , cell=cell , hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame = batch_Frame , frame_time=frame_time , graphviz=True , parameter_shared=parameter_shared)
         print(completed)
 
 else:
