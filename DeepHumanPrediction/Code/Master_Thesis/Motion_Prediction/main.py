@@ -1,7 +1,7 @@
 #Motion Prediction -  2 second prediction completed
 from network import MotionNet
 
-TEST=False
+TEST=True
 
 #The following parameters must have the same value in 'training' and 'test' modes.
 num_layer=1
@@ -12,12 +12,12 @@ seed_timestep = 20 # 0.6 second motion seed  / 2 second motion prediction
 batch_Frame = 1
 frame_time = 30
 save_period = 0
-parameter_shared = False # Parameters that determine whether or not the encoder decoder will share parameters
+parameter_shared = True # Parameters that determine whether or not the encoder decoder will share parameters
 
 '''Execution'''
 if TEST :
 
-    MotionNet(TEST=TEST , save_period=1 , num_layer=num_layer , cell=cell, hidden_unit=hidden_unit , time_step = time_step ,
+    MotionNet(TEST=TEST , save_period=39075 , num_layer=num_layer , cell=cell, hidden_unit=hidden_unit , time_step = time_step ,
     seed_timestep = seed_timestep , batch_Frame= batch_Frame , frame_time=frame_time , graphviz=True , parameter_shared=parameter_shared)
 
 
