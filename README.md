@@ -28,7 +28,7 @@
 
     * [**Code**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/BVH_Writer)
 
-* ### [**Human Motion Prediction basic**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction) 
+* ### [**Human Motion Prediction basic -Various attempts**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction) 
     * **Encoding + Decoding Structure**
 
         * [**Motion Prediction Simple - completed**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/DeepHumanPrediction/Motion_Prediction_Simple)
@@ -60,9 +60,9 @@
 
 >## ***Master's Thesis***
 
-* ### [**Short : `1 second` and Long : `2 second` Deep Human Motion Prediction**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
+* ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***Human Motion Prediction with Seq2Seq , Input noise , Tied weights ,  Batch learning***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
+    * [***Human Motion Prediction with Seq2Seq , Input with noise , Tied weights , Batch learning***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
         ```python
         '''Please read the notes below'''
 
@@ -76,9 +76,23 @@
         ```
         Let's change the structure more efficiently.
         ```
-    * [**Various human behavior prediction artificial neural networks - not yet**]()
-        ```
-        A network that can classify and predict numerous behaviors.
+    * [**Human Motion Analysis**]()
+        ```python
+        '''
+        Human Motion Analysis' consists of three projects.
+
+        <Key Point>
+
+        1. Motion classification
+
+        2. Is it possible to classify who is acting?
+
+        3. Can the network characterize motion data? Is it possible to generalize the operation? (Try creating about 2 seconds of motion.)
+        '''
+
+        <Training data> : The training motion data (816) of each of 8 men and 4 women with 68 motion data.
+
+        <Test data> : The Test motion data (204) of each of 2 men and 1 women with 68 motion data,
         ```
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
