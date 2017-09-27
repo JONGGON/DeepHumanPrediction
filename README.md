@@ -63,7 +63,7 @@
 
 * ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***Human Generation , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
+    * [***Motion Generation , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
         ```python
         '''Please read the notes below'''
 
