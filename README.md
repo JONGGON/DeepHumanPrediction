@@ -63,38 +63,43 @@
 
 * ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***Human Motion Prediction with Seq2Seq , Input with noise , Tied weights , Batch learning***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
+    * [***Human Generation , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Prediction)
         ```python
         '''Please read the notes below'''
 
-        * If we share encoder and decoder weights, we can only use Residual Connection for 'One RNN Layer',
-        because 'ResidualCell' must have the same size of input and output.
+        * about Network structure
 
-        * The code for MultiLayer is not actually used, but is written for later use.
+            - If we share encoder and decoder weights, we can only use Residual Connection for 'One RNN Layer', 
+            because 'ResidualCell' must have the same size of input and output.
+
+            - The code for MultiLayer is not actually used, but is written for later use.
+
+        * about Dataset
+        
+            - <Training data> : The training motion data (272) for 4 women, 68 motion data per person.
+
+            - <Test data> : The Test motion data for 1 women, 68 motion data per person.
         ```
     * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
     
         ```
         Let's change the structure more efficiently.
         ```
-    * [**Human Motion Analysis**]()
+    * [***Human Motion Analysis consists of 3-Projects***]()
         ```python
-        '''
-        Human Motion Analysis' consists of three projects.
+        - <Training data> : The training motion data (816) for 8 men and 4 women, 68 motion data per person.
 
-        <Key Point>
-
-        1. Motion classification
-
-        2. Is it possible to classify who is acting?
-
-        3. Can the network characterize motion data? Is it possible to generalize the Human motion? 
-        '''
-
-        <Training data> : The training motion data (816) of each of 8 men and 4 women with 68 motion data.
-
-        <Test data> : The Test motion data (204) of each of 2 men and 1 women with 68 motion data,
+        - <Test data> : The Test motion data (204) for 8 men and 4 women, 68 motion data per person.
         ```
+        * [***1. Motion Classification***]()
+
+        * [***2. Motion Classification according to people***]() 
+
+        * [***3. Motion Generation With more data***]()
+            ```python
+            Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
+            ```
+
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
 * `python verison : 3.6.1 , anaconda3 version : (4.4.0)` 
