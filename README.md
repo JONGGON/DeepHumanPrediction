@@ -7,6 +7,7 @@
 >## ***Progress(Related studies necessary for master 's thesis.)***
 
 * ### **Where can I get the data?**
+
     * <https://accad.osu.edu/research/mocap/mocap_data.htm>
     * <http://mocapdata.com/>
 
@@ -87,7 +88,7 @@
 
         2. Is it possible to classify who is acting?
 
-        3. Can the network characterize motion data? Is it possible to generalize the operation? (Try creating about 2 seconds of motion.)
+        3. Can the network characterize motion data? Is it possible to generalize the Human motion? 
         '''
 
         <Training data> : The training motion data (816) of each of 8 men and 4 women with 68 motion data.
