@@ -24,7 +24,7 @@ if TEST :
 else:
 
     #batch learning
-    completed = MotionNet(epoch=700000 , batch_size=75 , save_period=save_period, cost_limit=0.1 ,
+    completed = MotionNet(epoch=50000 , batch_size=100 , save_period=save_period, cost_limit=0.01 ,
     optimizer='adam', learning_rate=0.0001 , lr_step=5000, lr_factor=0.99, stop_factor_lr=1e-08 , use_gpu=True ,
     TEST=TEST , num_layer=num_layer , cell=cell , hidden_unit=hidden_unit , time_step = time_step ,
     seed_timestep = seed_timestep , batch_Frame = batch_Frame , frame_time=frame_time , graphviz=True , parameter_shared=parameter_shared)

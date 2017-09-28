@@ -514,7 +514,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 if epoch % 2 == 0: # Only noise is added when it is an even number
                     '''1. Add noise to input - Data Augmentation'''
                     #random_normal
-                    noise = mx.nd.random_normal(loc=0 , scale=3 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
+                    noise = mx.nd.random_normal(loc=0 , scale=5 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
                     #random_uniform
                     #noise = mx.nd.random_uniform(low=-1 , high=1 , shape=(batch_size , seed_timestep+pre_timestep , column) ,ctx=ctx) # random_uniform
                     mod.forward(data_batch=mx.io.DataBatch(data = list([mx.nd.add(batch.data[0].as_in_context(ctx), noise)]), label= list(batch.label)), is_train=True)
@@ -598,7 +598,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             '''Creating a bvh file with predicted values -bvh_writer'''
             bw.Motion_Data_Making(seed[:,:seed_timestep] / Normalization_factor , prediction_motion , seed_timestep , pre_timestep , batch_Frame , frame_time , file_directory , Model)
 
-            return "learning completed"
+            return "Test completed"
         else:
             print("Can not test")
 
@@ -612,10 +612,10 @@ if __name__ == "__main__":
     num_layer=1  
     cell='lstm'
     hidden_unit=1000  
-    time_step = 100 
-    seed_timestep = 20  
+    time_step = 90
+    seed_timestep = 30
     batch_Frame= 1  
-    frame_time=30
+    frame_time = 30
     save_period=0
     parameter_shared = True
 
@@ -626,8 +626,8 @@ if __name__ == "__main__":
         print(completed)
 
     else:
-        completed = MotionNet(epoch=300000 , batch_size=5 , save_period=save_period, cost_limit=0.1 ,
-        optimizer='adam', learning_rate=0.001 , lr_step=5000, lr_factor=0.99, stop_factor_lr=1e-08 , use_gpu=True ,
+        completed = MotionNet(epoch=700000 , batch_size=68 , save_period=save_period, cost_limit=0.1 ,
+        optimizer='adam', learning_rate=0.0001 , lr_step=5000, lr_factor=0.99, stop_factor_lr=1e-08 , use_gpu=True ,
         TEST=TEST , num_layer=num_layer , cell=cell , hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame = batch_Frame , frame_time=frame_time , graphviz=True , parameter_shared=parameter_shared)
         print(completed)
 

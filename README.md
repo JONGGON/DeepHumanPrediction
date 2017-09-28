@@ -93,7 +93,7 @@
         ```
         * [***1. Motion Classification***]()
 
-        * [***2. Motion Classification according to people***]() 
+        * [***2. Human Motion Pattern Classification***]() 
 
         * [***3. Motion Generation With more data***]()
             ```python

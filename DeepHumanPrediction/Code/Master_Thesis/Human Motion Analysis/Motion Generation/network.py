@@ -514,7 +514,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 if epoch % 2 == 0: # Only noise is added when it is an even number
                     '''1. Add noise to input - Data Augmentation'''
                     #random_normal
-                    noise = mx.nd.random_normal(loc=0 , scale=3 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
+                    noise = mx.nd.random_normal(loc=0 , scale=5 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
                     #random_uniform
                     #noise = mx.nd.random_uniform(low=-1 , high=1 , shape=(batch_size , seed_timestep+pre_timestep , column) ,ctx=ctx) # random_uniform
                     mod.forward(data_batch=mx.io.DataBatch(data = list([mx.nd.add(batch.data[0].as_in_context(ctx), noise)]), label= list(batch.label)), is_train=True)
@@ -527,13 +527,13 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 mod.update()
 
             #print('epoch : {} , MSE : {}'.format(epoch,metric.get()))
-            if epoch % 100 == 0:
+            if epoch % 1000 == 0:
                 end_time=time.time()
                 print("-------------------------------------------------------")
                 print("{}_learning time : {}".format(epoch,end_time-start_time))
                 print("-------------------------------------------------------")
 
-            if epoch % 10000 == 0:
+            if epoch % 1000 == 0:
                 if not os.path.exists("weights"):
                     os.makedirs("weights")
 
@@ -598,7 +598,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             '''Creating a bvh file with predicted values -bvh_writer'''
             bw.Motion_Data_Making(seed[:,:seed_timestep] / Normalization_factor , prediction_motion , seed_timestep , pre_timestep , batch_Frame , frame_time , file_directory , Model)
 
-            return "learning completed"
+            return "Test completed"
         else:
             print("Can not test")
 
@@ -612,8 +612,8 @@ if __name__ == "__main__":
     num_layer=1  
     cell='lstm'
     hidden_unit=1000  
-    time_step = 100 
-    seed_timestep = 20  
+    time_step = 90
+    seed_timestep = 30
     batch_Frame= 1  
     frame_time=30
     save_period=0
