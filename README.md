@@ -63,7 +63,7 @@
 
 * ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***Motion Generation , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
+    * [***Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
         ```python
         '''Please read the notes below'''
 
@@ -85,17 +85,17 @@
         ```
         Let's change the structure more efficiently.
         ```
-    * [***Human Motion Analysis consists of 3-Projects***]()
+    * [***Human Motion Analysis consists of 3-Projects***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis)
         ```python
         - <Training data> : The training motion data (816) for 8 men and 4 women, 68 motion data per person.
 
         - <Test data> : The Test motion data (204) for 8 men and 4 women, 68 motion data per person.
         ```
-        * [***1. Motion Classification***]()
+        * [***1. Motion Classification***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Motion%20Classification)
 
-        * [***2. Human Motion Pattern Classification***]() 
+        * [***2. Human Motion Pattern Classification***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Human%20Motion%20Pattern%20Classification) 
 
-        * [***3. Motion Generation With more data***]()
+        * [***3. Motion Prediction(Generation) With more data***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Motion%20Generation)
             ```python
             Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
             ```
