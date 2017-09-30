@@ -1,13 +1,13 @@
 from network import MotionNet
 import glob
 
-TEST=True
+TEST=False
 
 #The following parameters must have the same value in 'training' and 'test' modes.
 num_layer=1
 cell='lstm'
-hidden_unit=500
-time_step = 60
+hidden_unit=1000
+time_step = 90
 seed_timestep = 30
 batch_Frame= 1
 frame_time=30

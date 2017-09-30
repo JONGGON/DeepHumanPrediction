@@ -63,7 +63,9 @@
 
 * ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
+    * [***1-1. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method = Test method***]()
+
+    * [***1-2. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method != Test method***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
         ```python
         '''Please read the notes below'''
 
@@ -95,7 +97,8 @@
 
         * [***2. Human Motion Pattern Classification***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Human%20Motion%20Pattern%20Classification) 
 
-        * [***3. Motion Prediction(Generation) With more data***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Motion%20Generation)
+
+        * [***3-2. Motion Prediction(Generation) With more data***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Motion%20Generation)
             ```python
             Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
             ```
