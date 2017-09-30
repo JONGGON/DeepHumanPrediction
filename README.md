@@ -63,9 +63,9 @@
 
 * ### [**Human motion for Master's Thesis**](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis)
 
-    * [***1-1. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method = Test method***]()
+    * [***1-1. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method = Test method***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation/Motion_Generation1)
 
-    * [***1-2. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method != Test method***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation)
+    * [***1-2. Motion Prediction(Generation) , Batch Learning , Input with noise , Tied weights , Training method != Test method***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Motion_Generation/Motion_Generation2)
         ```python
         '''Please read the notes below'''
 
