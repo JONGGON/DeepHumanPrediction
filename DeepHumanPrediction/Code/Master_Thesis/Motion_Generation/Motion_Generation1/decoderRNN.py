@@ -554,7 +554,6 @@ class LSTMCell(BaseRNNCell):
         if self.current_layer == self.layer_number-1:
             '''2. not parameter sharing , Create Each !!! '''
             #output = symbol.FullyConnected(data=next_h ,  num_hidden = self._num_output*2)  # customized by JG
-            #output = symbol.FullyConnected(data=next_h ,  num_hidden = self._num_output*2)  # customized by JG
             # Transform output size and output value to the motion network. -value : Linear , shape =(motion_shape)
             output = symbol.FullyConnected(data=next_h , weight = self._oW , bias=self._oB, num_hidden=self._num_output)  # customized by JG
             return output, [next_h, next_c]

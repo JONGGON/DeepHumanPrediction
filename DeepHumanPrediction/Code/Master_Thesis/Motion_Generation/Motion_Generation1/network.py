@@ -408,7 +408,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
     seed_motion = mx.sym.slice_axis(data=all_motion , axis=1 , begin = 0 , end = seed_timestep)  # (batch , time , column)
 
     if TEST == True:
-        pre_motion = mx.sym.reshape(mx.sym.slice_axis(data=all_motion, axis=1, begin=seed_timestep, end=seed_timestep + 1), shape=(1, -1))  # (batch=1,column) - first frame
+        pre_motion = mx.sym.reshape(mx.sym.slice_axis(data=all_motion, axis=1, begin=seed_timestep-1, end=seed_timestep), shape=(1, -1))  # (batch=1,column) - first frame
     else:
         pre_motion = mx.sym.slice_axis(data=all_motion, axis=1, begin=seed_timestep-1, end=-1)
 
@@ -593,6 +593,8 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             #test cost
             cost = prediction_motion - train_label_motion
             cost=(cost**2)/2
+            TimeStepError_Array=np.mean(cost,axis=(0,2))
+            print(TimeStepError_Array)
             cost=np.mean(cost)
             print("prediction error : {}".format(cost))
 

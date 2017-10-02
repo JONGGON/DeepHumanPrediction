@@ -11,21 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="511" column="23" lean-forward="false" selection-start-line="511" selection-start-column="23" selection-end-line="511" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bvh_reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bvh_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="373">
+              <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding>
                 <element signature="e#22#40#0" expanded="true" />
               </folding>
@@ -36,7 +26,7 @@
       <file leaf-file-name="bvh_writer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bvh_writer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="399">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#22#40#0" expanded="true" />
@@ -48,18 +38,38 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="380">
+              <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decoderRNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decoderRNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decoderRNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="559" column="43" lean-forward="true" selection-start-line="559" selection-start-column="43" selection-end-line="559" selection-end-column="43" />
+            <state relative-caret-position="635">
+              <caret line="557" column="54" lean-forward="false" selection-start-line="557" selection-start-column="54" selection-end-line="557" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="596" column="38" lean-forward="true" selection-start-line="596" selection-start-column="38" selection-end-line="596" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/core/fromnumeric.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-362">
+              <caret line="2785" column="4" lean-forward="false" selection-start-line="2785" selection-start-column="4" selection-end-line="2785" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -125,16 +135,17 @@
         <option value="$PROJECT_DIR$/customizedRNN.py" />
         <option value="$PROJECT_DIR$/Reference/encoderRNN.py" />
         <option value="$PROJECT_DIR$/encoderRNN.py" />
-        <option value="$PROJECT_DIR$/bvh_reader.py" />
         <option value="$PROJECT_DIR$/bvh_writer.py" />
+        <option value="$PROJECT_DIR$/decoderRNN.py" />
+        <option value="$PROJECT_DIR$/bvh_reader.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/network.py" />
-        <option value="$PROJECT_DIR$/decoderRNN.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="411" />
+    <option name="x" value="315" />
+    <option name="y" value="67" />
     <option name="width" value="1517" />
     <option name="height" value="1038" />
   </component>
@@ -153,33 +164,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Motion_Generation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Motion_Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Motion_Generation1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion_Generation1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Motion_Generation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Motion_Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Motion_Generation1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion_Generation1" type="462c0819:PsiDirectoryNode" />
               <item name="Dataset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Motion_Generation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Motion_Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Motion_Generation1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion_Generation1" type="462c0819:PsiDirectoryNode" />
+              <item name="Dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Motion_Generation1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion_Generation1" type="462c0819:PsiDirectoryNode" />
               <item name="weights" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Motion_Generation2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
@@ -364,13 +381,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="411" y="0" width="1517" height="1038" extended-state="0" />
+    <frame x="315" y="67" width="1517" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06804536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4050633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42069992" sideWeight="0.36472946" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.63527054" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5210811" sideWeight="0.63527054" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -438,8 +455,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/rnn_cell.py" />
-    <entry file="file://$USER_HOME$/Motion_Prediction_advanced_Seq2Seq_sequencialversion/network.py" />
     <entry file="file://$USER_HOME$/Motion_Prediction_advanced_Seq2Seq_sequencialversion/bvh_reader.py" />
     <entry file="file://$USER_HOME$/Motion_Prediction_advanced_Seq2Seq_batchversion/bvh_reader.py" />
     <entry file="file://$USER_HOME$/Motion_Prediction_Seq2Seq_sequencialversion/main.py" />
@@ -492,7 +507,7 @@
     <entry file="file://$USER_HOME$/DeepHumanPrediction/Motion_Prediction_Seq2Seq_No_Input_decoder/Motion_Prediction_advanced_Seq2Seq_batchversion/bvh_writer.py" />
     <entry file="file://$PROJECT_DIR$/bvh_writer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
+        <state relative-caret-position="399">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
@@ -500,36 +515,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/mxnet-0.11.1-py3.6.egg/mxnet/module/base_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bvh_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="e#22#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="511" column="23" lean-forward="false" selection-start-line="511" selection-start-column="23" selection-end-line="511" selection-end-column="24" />
+        <state relative-caret-position="5472">
+          <caret line="299" column="8" lean-forward="false" selection-start-line="299" selection-start-column="8" selection-end-line="299" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decoderRNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="559" column="43" lean-forward="true" selection-start-line="559" selection-start-column="43" selection-end-line="559" selection-end-column="43" />
+        <state relative-caret-position="635">
+          <caret line="557" column="54" lean-forward="false" selection-start-line="557" selection-start-column="54" selection-end-line="557" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bvh_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#22#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="2785" column="4" lean-forward="false" selection-start-line="2785" selection-start-column="4" selection-end-line="2785" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="596" column="38" lean-forward="true" selection-start-line="596" selection-start-column="38" selection-end-line="596" selection-end-column="38" />
           <folding />
         </state>
       </provider>

@@ -21,7 +21,7 @@ def Motion_Data_Preprocessing(time_step=100, seed_timestep=20, batch_Frame=5 ,TE
     seed_timestep = seed_timestep
     batch_Frame = batch_Frame
     xyz_position = 3
-    complexity = False
+    complexity = True
     Data = []
     train_label_motion = []
 
