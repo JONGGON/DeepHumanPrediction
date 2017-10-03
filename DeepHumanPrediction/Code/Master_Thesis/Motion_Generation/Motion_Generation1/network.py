@@ -1,5 +1,6 @@
 import mxnet as mx
 import numpy as np
+import matplotlib.pyplot as plt
 import bvh_reader as br
 import bvh_writer as bw
 import decoderRNN as dRNN # JG Customized decoderRNN.py
@@ -593,14 +594,30 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             #test cost
             cost = prediction_motion - train_label_motion
             cost=(cost**2)/2
-            TimeStepError_Array=np.mean(cost,axis=(0,2))
-            print(TimeStepError_Array)
+
+            TimeStepError_Array=np.mean(cost,axis=(0,2)) # y-axis
+            TimeStep = np.arange(1,pre_timestep+1,1) # x-axis
+            #Dram Error graph
+            plt.figure(figsize=(9,4))
+            bbox = dict(boxstyle = 'round' , fc = 'w' , ec = 'b' , lw = 2)
+            #plt.plot(TimeStep , TimeStepError_Array , "r." , lw=3 ,label = "Error")
+            plt.bar(TimeStep , TimeStepError_Array , width=0.7 ,label ='error', color = 'r')
+            plt.annotate("Increase" , xy = (50,3500) , xytext=(10,1000), textcoords='data' ,arrowprops={'color' : 'blue' , 'alpha' : 0.3 , 'arrowstyle' : "simple" , 'connectionstyle' : "arc3"}, bbox = bbox)
+            plt.grid()
+            plt.xlabel("Time")
+            plt.ylabel("Joint Angle Error")
+            plt.legend()
+            plt.title("Prediction Error Graph")
+            print("cost graph saved")
+            plt.savefig("Cost Graph.jpg")
+
             cost=np.mean(cost)
             print("prediction error : {}".format(cost))
 
             '''Creating a bvh file with predicted values -bvh_writer'''
             bw.Motion_Data_Making(seed[:,:seed_timestep] / Normalization_factor , prediction_motion , seed_timestep , pre_timestep , batch_Frame , frame_time , file_directory , Model)
 
+            plt.show()
             return "Test completed"
         else:
             print("Can not test")
