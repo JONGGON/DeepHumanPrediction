@@ -91,7 +91,7 @@
         ```python
         - <Training data> : The training motion data (816) for 8 men and 4 women, 68 motion data per person.
 
-        - <Test data> : The Test motion data (204) for 8 men and 4 women, 68 motion data per person.
+        - <Test data> : The Test motion data (204) for 2 men and 1 women, 68 motion data per person.
         ```
         * [***1. Motion Classification***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis/Motion%20Classification)
 
