@@ -592,12 +592,34 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
             #test cost
             cost = prediction_motion - train_label_motion
             cost=(cost**2)/2
+
+            print(style.available)
+            TimeStepError_Array=np.mean(cost,axis=(0,2)) # y-axis
+            TimeStep = np.arange(1,pre_timestep+1,1) # x-axis
+
+            #Dram Error graph
+            style.use('seaborn')
+            plt.figure(figsize=(9,4))
+            bbox = dict(boxstyle = 'round' , fc = 'w' , ec = 'b' , lw = 2)
+            #plt.plot(TimeStep , TimeStepError_Array , "r." , lw=3 ,label = "Error")
+            plt.bar(TimeStep , TimeStepError_Array , width=0.7 ,label ='error', color = 'r')
+            plt.annotate("Error Prevention" ,fontsize=14, xy = (60,1000) , xytext=(0,1000), textcoords='data' ,arrowprops={'color' : 'blue' , 'alpha' : 0.3 , 'arrowstyle' : "simple"}, bbox = bbox)
+            plt.grid()
+            plt.xlabel("Time", fontsize=14)
+            plt.ylabel("Joint Angle Error" , fontsize=14)
+            plt.ylim(0,4400)
+            plt.legend(fontsize=15,loc='upper left')
+            plt.title("Prediction Error Graph", fontdict={'fontsize': 15 , 'fontweight' : 5})
+            print("cost graph saved")
+            plt.savefig("Cost Graph.jpg")
+
             cost=np.mean(cost)
             print("prediction error : {}".format(cost))
 
             '''Creating a bvh file with predicted values -bvh_writer'''
             bw.Motion_Data_Making(seed[:,:seed_timestep] / Normalization_factor , prediction_motion , seed_timestep , pre_timestep , batch_Frame , frame_time , file_directory , Model)
 
+            plt.show()
             return "Test completed"
         else:
             print("Can not test")
