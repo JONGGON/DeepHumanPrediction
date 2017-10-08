@@ -40,7 +40,6 @@ def Motion_Data_Making(seed_motion , pre_motion , seed_timestep , pre_timestep ,
             all_motion_xyz[i][k][:x_y_z_position]=initial_position
             all_motion_xyz[i][k][x_y_z_position:]=pre_motion[i][k-seed_timestep]
 
-
     # Write to bvh file - Bvh files of test_size size are generated.
     for i in range(test_size):
         shutil.copy(structure_path,os.path.join(path,os.path.basename(file_directory[i])))

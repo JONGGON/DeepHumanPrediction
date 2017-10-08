@@ -7,7 +7,7 @@ def Motion_Data_Making(seed_motion , pre_motion , seed_timestep , pre_timestep ,
     
     np.set_printoptions(threshold=100000, linewidth=100000)
     test_size=len(seed_motion) # or len(pre_motion)\
-    initial_position=np.array([0,93.1,0])
+    initial_position=np.array([0,0,0])
     x_y_z_position=3
     
     seed_timestep=seed_timestep*batch_Frame
