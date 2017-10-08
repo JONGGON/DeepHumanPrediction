@@ -1,5 +1,7 @@
 import mxnet as mx
 import numpy as np
+import matplotlib.style as style
+import matplotlib.pyplot as plt
 import bvh_reader as br
 import bvh_writer as bw
 import decoderRNN as dRNN # JG Customized decoderRNN.py
@@ -514,7 +516,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 if epoch % 2 == 0: # Only noise is added when it is an even number
                     '''1. Add noise to input - Data Augmentation'''
                     #random_normal
-                    noise = mx.nd.random_normal(loc=0 , scale=5 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
+                    noise = mx.nd.random_normal(loc=0 , scale=7 , shape=(batch_size , seed_timestep+pre_timestep , column) , ctx=ctx) # random_normal
                     #random_uniform
                     #noise = mx.nd.random_uniform(low=-1 , high=1 , shape=(batch_size , seed_timestep+pre_timestep , column) ,ctx=ctx) # random_uniform
                     mod.forward(data_batch=mx.io.DataBatch(data = list([mx.nd.add(batch.data[0].as_in_context(ctx), noise)]), label= list(batch.label)), is_train=True)
@@ -527,13 +529,13 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
                 mod.update()
 
             #print('epoch : {} , MSE : {}'.format(epoch,metric.get()))
-            if epoch % 1000 == 0:
+            if epoch % 10000 == 0:
                 end_time=time.time()
                 print("-------------------------------------------------------")
                 print("{}_learning time : {}".format(epoch,end_time-start_time))
                 print("-------------------------------------------------------")
 
-            if epoch % 1000 == 0:
+            if epoch % 10000 == 0:
                 if not os.path.exists("weights"):
                     os.makedirs("weights")
 
@@ -631,17 +633,17 @@ if __name__ == "__main__":
     Model=3
 
     #The following parameters must have the same value in 'training' and 'test' modes.
-    num_layer=1  
+    num_layer=1
     cell='lstm'
-    hidden_unit=1000  
+    hidden_unit=1000
     time_step = 90
     seed_timestep = 30
-    batch_Frame= 1  
+    batch_Frame= 1
     frame_time=30
     save_period=0
     parameter_shared = True
     '''Execution'''
-    if TEST : 
+    if TEST :
 
         completed=MotionNet(TEST=TEST , save_period=1 , num_layer=num_layer , cell=cell, hidden_unit=hidden_unit , time_step = time_step , seed_timestep = seed_timestep , batch_Frame= batch_Frame , frame_time=frame_time ,graphviz=True, parameter_shared=parameter_shared, Model=Model)
         print(completed)
