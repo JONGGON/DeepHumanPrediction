@@ -119,7 +119,7 @@ def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.
                     param.append(eGRUCell.parameter)
                     Muilti_cell.add(eGRUCell)
 
-                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
 
             elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm' :
 
@@ -135,7 +135,7 @@ def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.
                     param.append(eLSTMCell.parameter)
                     Muilti_cell.add(eLSTMCell)
 
-                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
 
             else:
 
@@ -169,7 +169,7 @@ def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.
                 else:
                     Muilti_cell.add(eRNN.GRUCell(num_hidden=hidden_number , prefix="{}_encoder_{}".format(cell_type,i)))
 
-                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
 
             elif cell_type == 'lstm' or cell_type == 'LSTM' or cell_type == 'Lstm' :
 
@@ -182,7 +182,7 @@ def encoder(layer_number=1,hidden_number=500, Dropout_rate=0.2 , Zoneout_rate=0.
                 else:
                     Muilti_cell.add(eRNN.LSTMCell(num_hidden=hidden_number,prefix="{}_encoder_{}".format(cell_type,i)))
 
-                print("stack {}-'{}'- decoder cell".format(i,cell_type))
+                print("stack {}-'{}'- encoder cell".format(i,cell_type))
 
             else:
 
