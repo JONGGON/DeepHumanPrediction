@@ -82,11 +82,6 @@
 
             - <Test data> : The Test motion data for 1 women, 68 motion data per person.
         ```
-    * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
-    
-        ```
-        Let's change the structure more efficiently.
-        ```
     * [***Human Motion Analysis consists of 3-Projects***](https://github.com/JONGGON/DeepHumanPrediction/tree/master/DeepHumanPrediction/Code/Master_Thesis/Human%20Motion%20Analysis)
         ```python
         - <Training data> : The training motion data (816) for 8 men and 4 women, 68 motion data per person.
@@ -103,11 +98,16 @@
             Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
             ```
 
+    * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
+    
+        ```
+        Let's change the structure more efficiently.
+        ```
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
 * `python verison : 3.6.1 , anaconda3 version : (4.4.0)` 
 * `pycharm Community Edition 2017.2.2`
 
 >## ***Dependencies*** 
-* mxnet-0.11.1(`window`) , mxnet-0.11.1(`Linux`)
+* mxnet-0.12.1(`window`) , mxnet-0.12.1(`Linux`)
 * tqdm -> (`progress`) , graphviz -> ( `Visualization` )
