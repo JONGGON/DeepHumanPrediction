@@ -97,12 +97,7 @@
             ```python
             Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
             ```
-
-    * [**Neural Style for Motion Data : Data Augmentation - not yet**]()
-    
-        ```
-        Let's change the structure more efficiently.
-        ```
+            
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
 * `python verison : 3.6.1 , anaconda3 version : (4.4.0)` 
