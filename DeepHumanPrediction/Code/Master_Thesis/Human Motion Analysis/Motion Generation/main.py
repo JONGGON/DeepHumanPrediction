@@ -12,7 +12,7 @@ time_step = 90
 seed_timestep = 30 # 0.6 second motion seed  / 2 second motion prediction
 batch_Frame = 1
 frame_time = 24
-save_period = 60000
+save_period = 10000
 parameter_shared = True # Parameters that determine whether or not the encoder decoder will share parameters
 
 '''Execution'''

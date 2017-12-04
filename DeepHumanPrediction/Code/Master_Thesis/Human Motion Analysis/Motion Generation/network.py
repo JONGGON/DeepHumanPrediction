@@ -10,6 +10,7 @@ import os
 import time
 from collections import OrderedDict
 import logging
+from tqdm import *
 logging.basicConfig(level=logging.INFO)
 
 '''Let's make my own layer in symbol.'''
@@ -508,7 +509,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
 
         metric = mx.metric.create(['mse'])
 
-        for epoch in range(1, epoch + 1, 1):
+        for epoch in tqdm(range(1, epoch + 1, 1)):
             train_iter.reset()
             metric.reset()
             for batch in train_iter:

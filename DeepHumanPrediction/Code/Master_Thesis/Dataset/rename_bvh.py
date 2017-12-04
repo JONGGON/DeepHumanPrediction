@@ -4,8 +4,8 @@ import glob
 import sys
 
 #T = "Training" #Or "Test"
-T = "Test"
-model = "Model03"
+T = "Training"
+model = "Model19"
 data_path="orginal/{}/{}/bvh/*bvh".format(T,model)
 rename_path = "rename/{}/{}".format(T,model)
 
