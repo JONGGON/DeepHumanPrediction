@@ -12,6 +12,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="bvh_reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bvh_reader.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -31,9 +32,12 @@
         </entry>
       </file>
       <file leaf-file-name="bvh_reader.py" pinned="false" current-in-tab="false">
+=======
+      <file leaf-file-name="bvh_reader.py" pinned="false" current-in-tab="true">
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
         <entry file="file://$PROJECT_DIR$/bvh_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-593">
+            <state relative-caret-position="19">
               <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
               <folding>
@@ -47,12 +51,17 @@
         <entry file="file://$USER_HOME$/Desktop/NeuralStyle/data_preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
             <state relative-caret-position="1040">
               <caret line="40" column="80" lean-forward="false" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
+=======
+            <state relative-caret-position="418">
+              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -73,8 +82,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="27" column="95" lean-forward="true" selection-start-line="27" selection-start-column="95" selection-end-line="27" selection-end-column="95" />
+            <state relative-caret-position="57">
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -93,10 +102,22 @@
       <file leaf-file-name="encoderRNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encoderRNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1671">
+            <state relative-caret-position="11153">
               <caret line="589" column="0" lean-forward="false" selection-start-line="589" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
               <folding />
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="600" column="38" lean-forward="false" selection-start-line="600" selection-start-column="38" selection-end-line="600" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +192,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="x" value="746" />
     <option name="y" value="258" />
     <option name="width" value="1932" />
@@ -178,6 +200,10 @@
 =======
     <option name="x" value="2584" />
     <option name="y" value="46" />
+=======
+    <option name="x" value="2552" />
+    <option name="y" value="-12" />
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
     <option name="width" value="1936" />
     <option name="height" value="1056" />
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
@@ -210,11 +236,26 @@
               <item name="Motion Generation" type="462c0819:PsiDirectoryNode" />
               <item name="Dataset" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="Motion Generation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Motion Generation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Motion Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="weights" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,17 +454,21 @@
 =======
     <frame x="2552" y="-12" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23802084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42069992" sideWeight="0.36472946" order="7" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.63527054" order="2" side_tool="false" content_ui="tabs" />
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
+=======
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41251326" sideWeight="0.63527054" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2990456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2990456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -496,6 +541,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://C:/Program Files/Anaconda3/Lib/warnings.py" />
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
     <entry file="file://C:/Program Files/Anaconda3/Lib/logging/__init__.py" />
     <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/module/base_module.py" />
     <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/mxnet-0.9.5-py3.5.egg/mxnet/rnn/__init__.py" />
@@ -549,6 +598,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/bvh_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-593">
@@ -560,9 +610,11 @@
       </provider>
     </entry>
 >>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
+=======
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
     <entry file="file://$PROJECT_DIR$/encoderRNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1671">
+        <state relative-caret-position="11153">
           <caret line="589" column="0" lean-forward="false" selection-start-line="589" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
           <folding />
         </state>
@@ -570,32 +622,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bvh_writer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="40" column="80" lean-forward="false" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
+        <state relative-caret-position="418">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="e#22#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Cost Graph.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="27" column="95" lean-forward="true" selection-start-line="27" selection-start-column="95" selection-end-line="27" selection-end-column="95" />
+        <state relative-caret-position="57">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13662">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="522">
+          <caret line="600" column="38" lean-forward="false" selection-start-line="600" selection-start-column="38" selection-end-line="600" selection-end-column="38" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Desktop/NeuralStyle/data_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -610,12 +668,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="917">
           <caret line="60" column="23" lean-forward="false" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/bvh_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
           <folding>
             <element signature="e#22#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Desktop/NeuralStyle/VGG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-887">
@@ -626,5 +691,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 5338aaa72346bf3791880ccc30d9ff4537a94b66
   </component>
 </project>

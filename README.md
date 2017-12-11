@@ -97,11 +97,6 @@
             ```python
             Question? Can the network characterize motion data? Is it possible to generalize the Human motion?
             ```
-<<<<<<< HEAD
-            
-=======
-
->>>>>>> 1d43975c3950c052667f601b69466f98adb015e0
 >## ***Development environment***
 * `window 10.1 64 bit` and `Ubuntu Linux 16.04.2 LTS` 
 * `python verison : 3.6.1 , anaconda3 version : (4.4.0)` 

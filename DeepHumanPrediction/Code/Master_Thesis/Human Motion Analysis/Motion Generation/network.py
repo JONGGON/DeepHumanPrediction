@@ -598,6 +598,7 @@ def MotionNet(epoch=None , batch_size=None , save_period=None , cost_limit=None 
 
             print(style.available)
             TimeStepError_Array=np.mean(cost,axis=(0,2)) # y-axis
+            print(TimeStepError_Array)
             TimeStep = np.arange(1,pre_timestep+1,1) # x-axis
 
             #Dram Error graph
